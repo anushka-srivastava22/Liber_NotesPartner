@@ -1,14 +1,41 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import ContactUs from "./Helpers/ContactUs";
 import Navbar from "./Helpers/Navbar";
+import { Dropdown } from 'react-bootstrap';
+
+
 
 function App() {
+
   return (
     <>
       {/* Header */}
-      <Navbar id="header">
-      
+      <Navbar id="header"  >
+        <div className="d-flex justify-content-start align-items-center">
+          <span className="">
+            <img
+              src="./logo.png"
+              width="17%"
+              className=" m-0"
+            />
+          </span>
+          
+            <Dropdown className="float-start">
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Domain
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">CS/IT</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">ECE</Dropdown.Item>
+
+              </Dropdown.Menu>
+            </Dropdown>
+          
+
+        </div>
+
       </Navbar>
       {/* Base */}
 
@@ -32,7 +59,7 @@ function App() {
                   <p>Hello</p>
                 </div>
                 <div className="col-lg-4 col-sm-6 mt-auto ml-auto">
-                    <ContactUs></ContactUs>
+                  <ContactUs></ContactUs>
                 </div>
                 <div className="col-lg-4 col-sm-6">
                   {/* No Content here */}
